@@ -1,0 +1,22 @@
+service: my-lex-bot
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+
+custom:
+  lex:
+    botName: YourBotName
+    botAlias: YourBotAlias
+    botDescription: YourBotDescription
+    intents: ${file(bot-definition.json)}
+
+plugins:
+  - serverless-lex-bot
+
+resources:
+  Resources:
+    LexBot:
+      Type: AWS::Lex::Bot
+      Properties: ${self:custom.lex}
