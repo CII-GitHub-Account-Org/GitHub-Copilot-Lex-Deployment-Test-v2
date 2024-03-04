@@ -7,9 +7,9 @@ provider:
 
 custom:
   lex:
-    botName: YourBotName
-    botAlias: YourBotAlias
-    botDescription: YourBotDescription
+    botName: GitHubCopilotLexBotv2
+    botAlias: v1
+    botDescription: Bot to order flowers
     intents: ${file(bot-definition.json)}
 
 resources:
