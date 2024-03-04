@@ -1,4 +1,4 @@
-service: my-lex-bot
+service: github-copilot-lex-bot-deployment-v2
 
 provider:
   name: aws
