@@ -1,0 +1,22 @@
+{
+  "name": "my-lex-bot",
+  "version": "1.0.0",
+  "description": "This project deploys an AWS Lex bot using the Serverless Framework and GitHub Actions. The bot is defined in the `bot-definition.json` file and the Serverless Framework configuration is in the `serverless.yml` file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CII-GitHub-Account-Org/GitHub-Copilot-Lex-Deployment-Test-v2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CII-GitHub-Account-Org/GitHub-Copilot-Lex-Deployment-Test-v2/issues"
+  },
+  "homepage": "https://github.com/CII-GitHub-Account-Org/GitHub-Copilot-Lex-Deployment-Test-v2#readme",
+  "dependencies": {
+    "serverless": "^3.38.0"
+  }
+}

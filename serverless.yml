@@ -12,9 +12,6 @@ custom:
     botDescription: YourBotDescription
     intents: ${file(bot-definition.json)}
 
-plugins:
-  - serverless-lex-bot
-
 resources:
   Resources:
     LexBot:
