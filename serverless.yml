@@ -5,15 +5,43 @@ provider:
   runtime: nodejs18.x
   region: us-east-1
 
+
 custom:
   lex:
     botName: GitHubCopilotLexBotv2
     botAlias: v1
     botDescription: Bot to order flowers
-    intents: ${file(bot-definition.json)}
+    IdleSessionTTLInSeconds: 300
+    Locale: 'en-US'
+    ChildDirected: false
+    AbortStatement:
+      Messages:
+        - ContentType: 'PlainText'
+          Content: 'Sorry, I could not understand that. Goodbye.'
+    ClarificationPrompt:
+      Messages:
+        - ContentType: 'PlainText'
+          Content: 'I did not understand that. Can you try again?'
+      MaxAttempts: 2
+    Intents:
+      - IntentName: 'YourIntentName'
+        Version: 'YourIntentVersion'
 
 resources:
   Resources:
     LexBot:
       Type: AWS::Lex::Bot
       Properties: ${self:custom.lex}
+
+# custom:
+#   lex:
+#     botName: GitHubCopilotLexBotv2
+#     botAlias: v1
+#     botDescription: Bot to order flowers
+#     intents: ${file(bot-definition.json)}
+
+# resources:
+#   Resources:
+#     LexBot:
+#       Type: AWS::Lex::Bot
+#       Properties: ${self:custom.lex}
